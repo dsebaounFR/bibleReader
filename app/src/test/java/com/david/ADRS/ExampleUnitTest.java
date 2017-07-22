@@ -1,4 +1,4 @@
-package com.example.david.biblereader;
+package com.example.david.ADRS;
 
 import org.junit.Test;
 

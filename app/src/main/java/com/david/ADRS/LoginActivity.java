@@ -1,5 +1,8 @@
-package com.example.david.biblereader;
+package com.example.david.ADRS;
 
+
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +16,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import static android.R.attr.max;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -32,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         username = (EditText) findViewById(R.id.usernameField);
         password = (EditText) findViewById(R.id.passwordField);
-        Button loginButton = (Button) findViewById(R.id.button);
+        Button loginButton = (Button) findViewById(R.id.next);
         Button subscribeButton = (Button) findViewById(R.id.subscribe);
         password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -50,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         });
         subscribeButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent toSubscribe= new Intent(LoginActivity.this,subscribe.class);
+                Intent toSubscribe= new Intent(LoginActivity.this,subscribe1.class);
                 startActivity(toSubscribe);
             }
         });
@@ -61,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
         Intent toSearch= new Intent(LoginActivity.this,searchActivity.class);
         toSearch.putExtra("username",username.getText().toString());
         toSearch.putExtra("password",password.getText().toString());
-
         startActivity(toSearch);
 
 

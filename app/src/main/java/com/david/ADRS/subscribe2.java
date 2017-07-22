@@ -2,9 +2,6 @@ package com.example.david.ADRS;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -18,20 +15,18 @@ import android.widget.ImageView;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by david on 20/07/17.
  */
 
-public class subscribe extends Activity{
+public class subscribe2 extends Activity{
 
     static final int REQUEST_TAKE_PHOTO = 1;
-    String username;
-    String password;
-    String mCurrentPhotoPath;
-    ImageView picture;
+    private String username;
+    private String password;
+    private String mCurrentPhotoPath;
+    private ImageView picture;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,7 +40,7 @@ public class subscribe extends Activity{
         password = (String) data.get("password");
 
 
-        setContentView(R.layout.subscribe);
+        setContentView(R.layout.subscribe2);
         picture = findViewById(R.id.myPicture);
         final Button takePhoto = (Button) findViewById(R.id.takePhoto);
         Button validate = (Button) findViewById(R.id.validateSubscribe);
@@ -66,7 +61,7 @@ public class subscribe extends Activity{
     }
 
     private void toSearch(){
-        Intent toSearch = (Intent) new Intent(subscribe.this,searchActivity.class);
+        Intent toSearch = (Intent) new Intent(subscribe2.this,searchActivity.class);
         if(mCurrentPhotoPath!=null){
             toSearch.putExtra("photo_path",mCurrentPhotoPath);
 
